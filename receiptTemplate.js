@@ -85,7 +85,7 @@ export function buildReceiptHtml(tx) {
 
         <!-- Pay Bill -->
         <tr><td align="center" style="padding:0 32px 28px;">
-          <a href="${esc(PAY_BILL_URL)}" style="display:inline-block;background:linear-gradient(135deg,#4f46e5,#7c3aed);background-color:#4f46e5;color:#ffffff;text-decoration:none;font-size:16px;font-weight:700;padding:14px 40px;border-radius:10px;">Pay Bill</a>
+          <a href="${esc(tx.pay_url || PAY_BILL_URL)}" style="display:inline-block;background:linear-gradient(135deg,#4f46e5,#7c3aed);background-color:#4f46e5;color:#ffffff;text-decoration:none;font-size:16px;font-weight:700;padding:14px 40px;border-radius:10px;">Pay Bill</a>
         </td></tr>
 
         <!-- Thank you + support -->

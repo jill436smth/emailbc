@@ -4,6 +4,7 @@ import cors from "cors";
 
 import paymentRoutes from "./routes/payment.js";
 import receiptRoutes from "./routes/receipt.js";
+import emailRoutes from "./routes/email.js";
 import transactionRoutes from "./routes/transactions.js";
 
 const app = express();
@@ -38,6 +39,7 @@ app.get("/api/health", (req, res) => res.json({ ok: true }));
 
 app.use("/api/payment", paymentRoutes);
 app.use("/api/receipt", receiptRoutes);
+app.use("/api/email", emailRoutes);
 app.use("/api/transactions", transactionRoutes);
 
 const PORT = process.env.PORT || 4000;
