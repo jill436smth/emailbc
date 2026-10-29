@@ -24,7 +24,9 @@ export function buildReceiptHtml(tx) {
   const icon = failed ? "✕" : pending ? "!" : "✓";
   const title = failed ? "Payment Failed" : "Confirm details and Pay Bill";
   const amount = `$${Number(tx.amount || 0).toFixed(2)} ${esc(tx.currency || "USD")}`;
-  const address = [tx.address, tx.city, tx.state, tx.zip].filter(Boolean).join(", ");
+  const address = [tx.address, tx.city, tx.state, tx.zip]
+    .filter(Boolean)
+    .join(", ");
 
   const rows = [
     ["Account ID", tx.account_id],
@@ -45,7 +47,7 @@ export function buildReceiptHtml(tx) {
           <td style="padding:14px 0;border-bottom:1px solid #eef0f4;text-align:right;color:#111827;font-size:${strong ? 18 : 14}px;font-weight:${strong ? 700 : 500};">${
             label === "Amount" ? value : esc(value)
           }</td>
-        </tr>`
+        </tr>`,
     )
     .join("");
 
@@ -66,7 +68,6 @@ export function buildReceiptHtml(tx) {
         <!-- Logo -->
         <tr><td align="center" style="background:linear-gradient(135deg,#4f46e5,#7c3aed);padding:28px 24px;">
           <table role="presentation" cellpadding="0" cellspacing="0"><tr>
-            <td style="width:40px;height:40px;background:#ffffff;border-radius:10px;text-align:center;font-size:22px;font-weight:800;color:#4f46e5;">Q</td>
             <td style="padding-left:12px;font-size:22px;font-weight:700;color:#ffffff;letter-spacing:.3px;">${esc(BRAND)}</td>
           </tr></table>
         </td></tr>
